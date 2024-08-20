@@ -1,4 +1,4 @@
-﻿/* OneRow */
+/* OneRow */
 
 .fluent-messagebar {
     font-family: var(--body-font);
@@ -93,9 +93,9 @@
         margin-inline-start: 5px;
  }
 
-::deep .fluent-messagebar-action {
+.fluent-messagebar-container-action ::deep fluent-button,
+.fluent-messagebar-container-action ::deep fluent-anchor:not([appearance="hypertext"]) {
     height: 24px;
-
 }
 
 .fluent-messagebar-close {

@@ -14,7 +14,7 @@
     <FluentMessageBar Title="Descriptive title" Intent="@MessageIntent.Error">
         Message providing information to the user with actionable insights.
     </FluentMessageBar>
-    
+
     <FluentMessageBar Title="Descriptive title" Intent="@MessageIntent.Custom" Icon="@(new Icons.Filled.Size20.LeafTwo())" IconColor="Color.Neutral">
         Message providing information to the user with actionable insights.
     </FluentMessageBar>
@@ -22,4 +22,30 @@
     <FluentMessageBar Title="Descriptive title" Intent="@MessageIntent.Error" AllowDismiss="false">
         Message that is not dismissible.
     </FluentMessageBar>
+
+    <FluentMessageBar Title="Descriptive title" Intent="@MessageIntent.Warning">
+        <ChildContent>
+            Message with some actions
+        </ChildContent>
+        <ActionsTemplate>
+            <FluentButton Appearance="@Appearance.Neutral" OnClick="OnPrimaryAction">
+                Primary
+            </FluentButton>
+            <FluentButton Appearance="@Appearance.Neutral" OnClick="OnSecondaryAction">
+                Secondary
+            </FluentButton>
+        </ActionsTemplate>
+    </FluentMessageBar>
 </FluentStack>
+
+@code {
+    private void OnPrimaryAction()
+    {
+        DemoLogger.WriteLine($"Message 'Primary' clicked");
+    }
+
+    private void OnSecondaryAction()
+    {
+        DemoLogger.WriteLine($"Message 'Secondary' clicked");
+    }
+}

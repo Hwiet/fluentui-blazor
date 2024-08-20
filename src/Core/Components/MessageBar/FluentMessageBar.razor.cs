@@ -46,6 +46,9 @@ public partial class FluentMessageBar : FluentComponentBase, IDisposable
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
+    [Parameter]
+    public RenderFragment? ActionsTemplate { get; set; }
+
     /// <summary>
     /// Gets or sets the intent of the message bar. 
     /// Default is MessageIntent.Info. See <see cref="MessageIntent"/> for more details.

@@ -39,12 +39,15 @@
                 }
             </div>
             <div class="fluent-messagebar-container-action">
+                @if (ActionsTemplate != null)
+                {
+                    @ActionsTemplate
+                }
                 @if (ShowPrimaryAction)
                 {
                     <FluentButton Appearance="@Appearance.Neutral"
                                   OnClick="@PrimaryActionClickedAsync"
-                                  title="Alert action"
-                                  Class="fluent-messagebar-action">
+                                  title="Alert action">
                         @PrimaryAction?.Text
                     </FluentButton>
                 }
@@ -52,8 +55,7 @@
                 {
                     <FluentButton Appearance="@Appearance.Neutral"
                                   OnClick="@SecondaryActionClickedAsync"
-                                  title="Alert action"
-                                  Class="fluent-messagebar-action">
+                                  title="Alert action">
                         @SecondaryAction?.Text
                     </FluentButton>
                 }
